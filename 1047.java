@@ -6,7 +6,25 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Scanner prompt = new Scanner(System.in);
-        
+        int horaInicial = prompt.nextInt();
+        int minutoInicial = prompt.nextInt();
+        int horaFinal = prompt.nextInt();
+        int minutoFinal = prompt.nextInt();
+
+        int horas = horaFinal - horaInicial;
+        int minutos = minutoFinal - minutoInicial;
+
+        if (minutos < 0) {
+            minutos += 60;
+            horas--;
+        }
+        if (horas < 0) {
+            horas += 24;
+        }
+        else if (horas == 0 && minutos == 0) {
+            horas = 24;
+        }
+        System.out.println("O JOGO DUROU " + horas + " HORA(S) E " + minutos + " MINUTO(S)");
         
     }
 }
